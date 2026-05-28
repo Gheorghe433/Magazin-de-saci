@@ -4,65 +4,65 @@ $categorii = [
     [
         'id'      => 'big-bags',
         'titlu'   => 'Big bags',
-        'imagine' => 'imagini/big-bag.jpg',
+        'imagine' => 'imagini/imagini/big-bag.jpg',
         'preview' => 'SACI BIG BAGS 75X110X240',
         'produse' => [
-            ['nume' => 'SACI BIG BAGS 75X110X240', 'slug' => 'saci-big-bags-75x110x240'],
-            ['nume' => 'SACI BIG BAGS 90X90X110',  'slug' => 'saci-big-bags-90x90x110'],
-            ['nume' => 'SACI BIG BAGS 90X90X160',  'slug' => 'saci-big-bags-90x90x160'],
-            ['nume' => 'SACI BIG BAGS 90X90X90',   'slug' => 'saci-big-bags-90x90x90'],
+            ['nume' => 'SACI BIG BAGS 75X110X240', 'slug' => 'saci-big-bags-75x110x240', 'imagine' => 'big-bag.jpg'],
+            ['nume' => 'SACI BIG BAGS 90X90X110',  'slug' => 'saci-big-bags-90x90x110', 'imagine'  =>  'big-bag.jpg'],
+            ['nume' => 'SACI BIG BAGS 90X90X160',  'slug' => 'saci-big-bags-90x90x160', 'imagine'  =>  'big-bag.jpg'],
+            ['nume' => 'SACI BIG BAGS 90X90X90',   'slug' => 'saci-big-bags-90x90x90',  'imagine'  => 'bigbags_saci_90_90_90.jpg'],
         ],
     ],
     [
         'id'      => 'plasa-tubulara',
         'titlu'   => 'Plasă tubulară si stretch',
-        'imagine' => 'imagini/plasa-tubulara.jpg',
+        'imagine' => 'imagini/imagini/plasa_tubulara.jpg',
         'preview' => 'Plasă tubulară',
         'produse' => [
-            ['nume' => 'Plasă tubulară', 'slug' => 'plasa-tubulara'],
-            ['nume' => 'Stretch',        'slug' => 'stretch'],
+            ['nume' => 'Plasă tubulară', 'slug' => 'plasa-tubulara','imagine' => 'plasa_tubulara.jpg'],
+            ['nume' => 'Stretch',        'slug' => 'stretch','imagine' => 'folie_paletizat_1kg-2.jpg'],
         ],
     ],
     [
         'id'      => 'plasa',
         'titlu'   => 'Plasă',
-        'imagine' => 'imagini/plasa.jpg',
+        'imagine' => 'imagini/imagini/plasa.jpg',
         'preview' => 'Saci Plasă 30x34',
         'produse' => [
-            ['nume' => 'Saci Plasă 30x34', 'slug' => 'saci-plasa-30x34'],
-            ['nume' => 'Saci Plasă 40x58', 'slug' => 'saci-plasa-40x58'],
-            ['nume' => 'Saci Plasă 52x72', 'slug' => 'saci-plasa-52x72'],
+            ['nume' => 'Saci Plasă 30x34', 'slug' => 'saci-plasa-30x34', 'imagine' => 'plasa.jpg'],
+            ['nume' => 'Saci Plasă 40x58', 'slug' => 'saci-plasa-40x58', 'imagine' => 'plasa.jpg'],
+            ['nume' => 'Saci Plasă 52x72', 'slug' => 'saci-plasa-52x72', 'imagine' => 'plasa.jpg'],
         ],
     ],
     [
         'id'      => 'polietilena',
         'titlu'   => 'Polietilenă',
-        'imagine' => 'imagini/polietilena.jpg',
+        'imagine' => 'imagini/imagini/polietilena.jpg',
         'preview' => 'Saci Polietilenă 32x62',
         'produse' => [
-            ['nume' => 'Saci Polietilenă 32x62',      'slug' => 'saci-polietilena-32x62'],
-            ['nume' => 'Saci Polietilenă 35x65',      'slug' => 'saci-polietilena-35x65'],
-            ['nume' => 'Saci Polietilenă 38x68',      'slug' => 'saci-polietilena-38x68'],
-            ['nume' => 'Saci Polietilenă 43x70',      'slug' => 'saci-polietilena-43x70'],
-            ['nume' => 'Saci Polietilenă 50x80 120mk','slug' => 'saci-polietilena-50x80-120mk'],
-            ['nume' => 'Saci Polietilenă 50x80 80mk', 'slug' => 'saci-polietilena-50x80-80mk'],
-            ['nume' => 'Saci Polietilenă 50x92',      'slug' => 'saci-polietilena-50x92'],
+            ['nume' => 'Saci Polietilenă 32x62',      'slug' => 'saci-polietilena-32x62', 'imagine' => 'polietilena.jpg'],
+            ['nume' => 'Saci Polietilenă 35x65',      'slug' => 'saci-polietilena-35x65', 'imagine' => 'polietilena.jpg'],
+            ['nume' => 'Saci Polietilenă 38x68',      'slug' => 'saci-polietilena-38x68', 'imagine' => 'polietilena.jpg'],
+            ['nume' => 'Saci Polietilenă 43x70',      'slug' => 'saci-polietilena-43x70', 'imagine' => 'polietilena.jpg'],
+            ['nume' => 'Saci Polietilenă 50x80 120mk','slug' => 'saci-polietilena-50x80-120mk', 'imagine' => 'polietilena.jpg'],
+            ['nume' => 'Saci Polietilenă 50x80 80mk', 'slug' => 'saci-polietilena-50x80-80mk', 'imagine' => 'polietilena.jpg'],
+            ['nume' => 'Saci Polietilenă 50x92',      'slug' => 'saci-polietilena-50x92', 'imagine' => 'polietilena.jpg'],
         ],
     ],
     [
         'id'      => 'polipropilena',
         'titlu'   => 'Polipropilenă',
-        'imagine' => 'imagini/polipropilena.jpg',
+        'imagine' => 'imagini/imagini/polipropilena.jpg',
         'preview' => 'Sac Polipropilenă 100x150',
         'produse' => [
-            ['nume' => 'Sac Polipropilenă 100x150', 'slug' => 'sac-polipropilena-100x150'],
-            ['nume' => 'Sac Polipropilenă 35x65',   'slug' => 'sac-polipropilena-35x65'],
-            ['nume' => 'Sac Polipropilenă 50x100',  'slug' => 'sac-polipropilena-50x100'],
-            ['nume' => 'Sac Polipropilenă 50x80',   'slug' => 'sac-polipropilena-50x80'],
-            ['nume' => 'Sac Polipropilenă 50x90',   'slug' => 'sac-polipropilena-50x90'],
-            ['nume' => 'Sac Polipropilenă 55x100',  'slug' => 'sac-polipropilena-55x100'],
-            ['nume' => 'Sac Polipropilenă 55x105',  'slug' => 'sac-polipropilena-55x105'],
-            ['nume' => 'Sac Polipropilenă 60x110',  'slug' => 'sac-polipropilena-60x110'],
+            ['nume' => 'Sac Polipropilenă 100x150', 'slug' => 'sac-polipropilena-100x150', 'imagine' => 'polipropilena.jpg'],
+            ['nume' => 'Sac Polipropilenă 35x65',   'slug' => 'sac-polipropilena-35x65', 'imagine' => 'polipropilena.jpg'],
+            ['nume' => 'Sac Polipropilenă 50x100',  'slug' => 'sac-polipropilena-50x100', 'imagine' => 'polipropilena.jpg'],
+            ['nume' => 'Sac Polipropilenă 50x80',   'slug' => 'sac-polipropilena-50x80', 'imagine' => 'polipropilena.jpg'],
+            ['nume' => 'Sac Polipropilenă 50x90',   'slug' => 'sac-polipropilena-50x90', 'imagine' => 'polipropilena.jpg'],
+            ['nume' => 'Sac Polipropilenă 55x100',  'slug' => 'sac-polipropilena-55x100', 'imagine' => 'polipropilena.jpg'],
+            ['nume' => 'Sac Polipropilenă 55x105',  'slug' => 'sac-polipropilena-55x105', 'imagine' => 'polipropilena.jpg'],
+            ['nume' => 'Sac Polipropilenă 60x110',  'slug' => 'sac-polipropilena-60x110', 'imagine' => 'polipropilena.jpg'],
         ],
     ],
 ];
@@ -85,8 +85,10 @@ $categorii = [
 <header class="header">
     <div class="container header__inner">
         <a href="index.php" class="header__logo">
-            
-            <span class="logo-text">🛍️ MagazinSaci</span>
+   
+                <img src="imagini/Logo.svg" alt="Logo Magazin Saci" class="logo-image">
+           
+
         </a>
         <div class="header__contact">
             <a href="https://maps.app.goo.gl/GAWu84AruE7GSy628" target="_blank" class="header__address">
@@ -115,7 +117,7 @@ $categorii = [
         <div class="hero__image">
             
             <div class="hero__image-placeholder">
-                <span>📦</span>
+               <img src="imagini/imagini/hero (1).png" alt="Hero Image">
             </div>
         </div>
     </div>
@@ -150,7 +152,9 @@ $categorii = [
                 <a href="produs.php?slug=<?= urlencode($produs['slug']) ?>" class="product-card">
                     <div class="product-card__img">
                         <?php
-                        $img_path = 'imagini/' . $produs['slug'] . '.jpg';
+                        
+                        $img_filename = isset($produs['imagine']) ? $produs['imagine'] : $produs['slug'] . '.jpg';
+                        $img_path = 'imagini/imagini/' . $img_filename;
                         if (file_exists($img_path)): ?>
                             <img src="<?= htmlspecialchars($img_path) ?>" alt="<?= htmlspecialchars($produs['nume']) ?>">
                         <?php else: ?>
@@ -179,7 +183,7 @@ $categorii = [
         </div>
         <div class="footer__info">
             <div class="footer__logo">
-                <span class="logo-text">🛍️ MagazinSaci</span>
+                <img src="imagini//imagini/logo.svg" alt="Magazin Saci">
             </div>
             <div class="footer__contacts">
                 <a href="tel:069149730" class="footer__phone">📞 069 149 730</a>
