@@ -1,4 +1,9 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+$loggedIn = isset($_SESSION['user_id']);
 
 $categorii = [
     [
@@ -81,15 +86,22 @@ $categorii = [
 </head>
 <body>
 
-
 <header class="header">
     <div class="container header__inner">
         <a href="index.php" class="header__logo">
-   
-                <img src="imagini/Logo.svg" alt="Logo Magazin Saci" class="logo-image">
-           
-
+            <img src="imagini/Logo.svg" alt="Logo Magazin Saci" class="logo-image">
         </a>
+
+        <div class="header__actions">
+            <?php if ($loggedIn): ?>
+                <a href="dashboard.php" class="btn btn-secondary">Dashboard</a>
+                <a href="logout.php" class="btn btn-outline">Ieșire</a>
+            <?php else: ?>
+                <a href="login.php" class="btn btn-secondary">Log in</a>
+                <a href="register.php" class="btn btn-primary">Înregistrare</a>
+            <?php endif; ?>
+        </div>
+
         <div class="header__contact">
             <a href="https://maps.app.goo.gl/GAWu84AruE7GSy628" target="_blank" class="header__address">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -103,7 +115,6 @@ $categorii = [
     </div>
 </header>
 
-
 <section class="hero">
     <div class="container hero__inner">
         <div class="hero__text">
@@ -115,14 +126,12 @@ $categorii = [
             </a>
         </div>
         <div class="hero__image">
-            
             <div class="hero__image-placeholder">
-               <img src="imagini/imagini/hero (1).png" alt="Hero Image">
+                <img src="imagini/imagini/hero (1).png" alt="Hero Image">
             </div>
         </div>
     </div>
 </section>
-
 
 <nav class="categories-nav" id="categories-nav">
     <div class="categories-nav__track">
@@ -140,7 +149,6 @@ $categorii = [
         <?php endforeach; ?>
     </div>
 </nav>
-
 
 <main class="main">
     <div class="container">
@@ -172,7 +180,6 @@ $categorii = [
     </div>
 </main>
 
-
 <footer class="footer">
     <div class="container footer__inner">
         <div class="footer__map">
@@ -185,11 +192,12 @@ $categorii = [
             <div class="footer__logo">
                 <img src="imagini//imagini/logo.svg" alt="Magazin Saci">
             </div>
+            <a href="contact.php" class="footer__contact-link">✉️ Contactează-ne</a>
+            <a href="https://maps.app.goo.gl/GAWu84AruE7GSy628" target="_blank" class="footer__addr">📍 Chișinău, Moldova</a>
+            <a href="tel:069149730" class="footer__phone">📞 069 149 730</a>
             <div class="footer__contacts">
-                <a href="tel:069149730" class="footer__phone">📞 069 149 730</a>
-                <a href="https://maps.app.goo.gl/GAWu84AruE7GSy628" target="_blank" class="footer__addr">📍 Chișinău, Moldova</a>
-                <a href="contact.php" class="footer__contact-link">✉️ Contactează-ne</a>
             </div>
+            
             <p class="footer__copy">© <?= date('Y') ?> Magazin Saci. Toate drepturile rezervate.</p>
         </div>
     </div>
