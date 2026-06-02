@@ -26,7 +26,7 @@ $loggedIn = isset($_SESSION['user_id']);
                 <a href="dashboard.php" class="btn btn-primary">Dashboard</a>
                 <a href="logout.php" class="btn btn-outline">Ieșire</a>
             <?php else: ?>
-                <a href="login.php" class="btn btn-primary">Log in</a>
+                <a href="login.php" class="btn btn-primary">Autentificare</a>
                 <a href="register.php" class="btn btn-primary">Înregistrare</a>
             <?php endif; ?>
         </div>

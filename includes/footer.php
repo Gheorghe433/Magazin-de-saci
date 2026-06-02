@@ -11,7 +11,7 @@
         </div>
         <div class="footer__info">
             <div class="footer__logo">
-                <span class="logo-text">🛍️ MagazinSaci</span>
+                <img src="imagini//imagini/Logo.svg" alt="Magazin Saci">
             </div>
             <div class="footer__contacts">
                 <a href="tel:069149730" class="footer__phone">📞 069 149 730</a>

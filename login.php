@@ -33,6 +33,16 @@ function loadUsers(string $file): array
 $users = loadUsers($dataFile);
 $error = '';
 $email = '';
+$flashSuccess = '';
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (isset($_SESSION['flash_success'])) {
+    $flashSuccess = $_SESSION['flash_success'];
+    unset($_SESSION['flash_success']);
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email  = trim($_POST['email'] ?? '');
@@ -69,6 +79,10 @@ require_once __DIR__ . '/includes/header.php';
     <div class="auth-card">
         <h1>Autentificare</h1>
 
+        <?php if ($flashSuccess): ?>
+            <div class="alert alert--success"><?= htmlspecialchars($flashSuccess) ?></div>
+        <?php endif; ?>
+
         <?php if ($error): ?>
             <div class="alert alert--error"><?= htmlspecialchars($error) ?></div>
         <?php endif; ?>
@@ -84,7 +98,7 @@ require_once __DIR__ . '/includes/header.php';
                 <input id="parola" type="password" name="parola" required autocomplete="current-password">
             </div>
 
-            <button type="submit" class="btn-full">Log in</button>
+            <button type="submit" class="btn-full">Autentificare</button>
         </form>
 
         <p>Nu ai cont? <a href="register.php">Înregistrează-te</a></p>

@@ -1,1 +1,9 @@
-[]
+[
+    {
+        "id": 1,
+        "nume": "Gheorghe",
+        "email": "gheo1@gmail.com",
+        "parola": "$2y$10$Xfg6kqKkbUNFopOwo6HXhOKw7VIOjuHBkSPzJ2\/pf7NaDxALr5xe.",
+        "created": "2026-06-02T07:38:03+02:00"
+    }
+]

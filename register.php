@@ -30,9 +30,15 @@ function loadUsers(string $file): array
     return json_decode($data, true) ?? [];
 }
 
-function saveUsers(string $file, array $users): void
+function saveUsers(string $file, array $users): bool
 {
-    file_put_contents($file, json_encode($users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), LOCK_EX);
+    $json = json_encode($users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+    if ($json === false) {
+        return false;
+    }
+
+    $res = @file_put_contents($file, $json, LOCK_EX);
+    return $res !== false;
 }
 
 $users   = loadUsers($dataFile);
@@ -75,11 +81,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'created' => date('c'),
             ];
 
-            saveUsers($dataFile, $users);
+            $ok = saveUsers($dataFile, $users);
 
-            $success = 'Cont creat cu succes! Te poți autentifica acum.';
-            $nume = '';
-            $email = '';
+            if ($ok) {
+                $_SESSION['flash_success'] = 'Cont creat cu succes! Te poți autentifica acum.';
+                header('Location: login.php');
+                exit;
+            } else {
+                $eroare = 'A apărut o eroare la salvarea contului. Încearcă din nou.';
+            }
         }
     }
 }

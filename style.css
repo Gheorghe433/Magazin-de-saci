@@ -400,6 +400,91 @@ img { display: block; max-width: 100%; }
     }
 }
 
+/* Dashboard & Auth styles */
+.card {
+    background: var(--clr-white);
+    border: 1px solid var(--clr-border);
+    border-radius: calc(var(--radius) - 2px);
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 20px;
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+}
+
+.users-table th,
+.users-table td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--clr-border);
+    font-size: 0.95rem;
+    color: var(--clr-text);
+}
+
+.users-table thead th {
+    background: transparent;
+    color: var(--clr-muted);
+    font-weight: 700;
+}
+
+.users-table tbody tr:hover {
+    background: rgba(26,86,219,0.03);
+}
+
+.auth-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+}
+
+.auth-card {
+    width: 420px;
+    max-width: calc(100% - 40px);
+    background: var(--clr-white);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow-md);
+}
+
+.auth-card h1 { margin-bottom: 18px; font-size: 1.25rem; }
+
+.form-group { margin-bottom: 14px; }
+.form-group label { display:block; margin-bottom:6px; color:var(--clr-muted); font-weight:600; }
+.form-group input {
+    width:100%;
+    padding:10px 12px;
+    border:1px solid var(--clr-border);
+    border-radius:8px;
+    background: #fff;
+    transition: box-shadow var(--transition), border-color var(--transition);
+}
+.form-group input:focus { outline: none; border-color: var(--clr-primary); box-shadow: 0 6px 18px rgba(26,86,219,0.06); }
+
+.btn-full {
+    display:inline-block;
+    width:100%;
+    background: var(--clr-primary);
+    color: var(--clr-white);
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-weight:700;
+    border: none;
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+.btn-full:hover { background: var(--clr-primary-dk); transform: translateY(-2px) scale(1.02); box-shadow: var(--shadow-hover); }
+
+@media (max-width: 768px) {
+    .auth-card { padding: 18px; }
+    .users-table th, .users-table td { padding: 10px; }
+}
+
 @media (max-width: 480px) {
     .hero { padding: 40px 0 36px; }
     .hero__title { font-size: 1.6rem; }
@@ -524,7 +609,7 @@ img { display: block; max-width: 100%; }
 
 .btn-full:hover {
     background: #1d4ed8;
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.02);
     box-shadow: 0 8px 16px rgba(37, 99, 235, 0.2);
 }
 

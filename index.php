@@ -97,7 +97,7 @@ $categorii = [
                 <a href="dashboard.php" class="btn btn-secondary">Dashboard</a>
                 <a href="logout.php" class="btn btn-outline">Ieșire</a>
             <?php else: ?>
-                <a href="login.php" class="btn btn-secondary">Log in</a>
+                <a href="login.php" class="btn btn-secondary">Autentificare</a>
                 <a href="register.php" class="btn btn-primary">Înregistrare</a>
             <?php endif; ?>
         </div>
@@ -190,7 +190,7 @@ $categorii = [
         </div>
         <div class="footer__info">
             <div class="footer__logo">
-                <img src="imagini//imagini/logo.svg" alt="Magazin Saci">
+                <img src="imagini//imagini/Logo.svg" alt="Magazin Saci">
             </div>
             <a href="contact.php" class="footer__contact-link">✉️ Contactează-ne</a>
             <a href="https://maps.app.goo.gl/GAWu84AruE7GSy628" target="_blank" class="footer__addr">📍 Chișinău, Moldova</a>
