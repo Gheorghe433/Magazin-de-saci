@@ -22,11 +22,16 @@ $loggedIn = isset($_SESSION['user_id']);
             <img src="imagini/Logo.svg" alt="Logo Magazin Saci" class="logo-image">
         </a>
         <div class="header__actions">
+            <?php if (!empty($showContactButton)): ?>
+                <a href="contact.php" class="btn btn-outline">Contact</a>
+            <?php endif; ?>
             <?php if ($loggedIn): ?>
                 <a href="dashboard.php" class="btn btn-primary">Dashboard</a>
                 <a href="logout.php" class="btn btn-outline">Ieșire</a>
+            <?php elseif (!empty($hideAuthButtons)): ?>
+                <a href="logout.php" class="btn btn-outline">Ieșire</a>
             <?php else: ?>
-                <a href="login.php" class="btn btn-primary">Autentificare</a>
+                <a href="login.php" class="btn btn-outline">Autentificare</a>
                 <a href="register.php" class="btn btn-primary">Înregistrare</a>
             <?php endif; ?>
         </div>

@@ -1,5 +1,5 @@
 <?php
-$host = '127.0.0.1';
+$host = 'localhost';
 $db   = 'magazin_de_saci';
 $user = 'root';
 $pass = '';

@@ -94,10 +94,10 @@ $categorii = [
 
         <div class="header__actions">
             <?php if ($loggedIn): ?>
-                <a href="dashboard.php" class="btn btn-secondary">Dashboard</a>
+                <a href="dashboard.php" class="btn btn-primary">Dashboard</a>
                 <a href="logout.php" class="btn btn-outline">Ieșire</a>
             <?php else: ?>
-                <a href="login.php" class="btn btn-secondary">Autentificare</a>
+                <a href="login.php" class="btn btn-outline">Autentificare</a>
                 <a href="register.php" class="btn btn-primary">Înregistrare</a>
             <?php endif; ?>
         </div>

@@ -400,7 +400,7 @@ img { display: block; max-width: 100%; }
     }
 }
 
-/* Dashboard & Auth styles */
+
 .card {
     background: var(--clr-white);
     border: 1px solid var(--clr-border);
@@ -465,6 +465,37 @@ img { display: block; max-width: 100%; }
     transition: box-shadow var(--transition), border-color var(--transition);
 }
 .form-group input:focus { outline: none; border-color: var(--clr-primary); box-shadow: 0 6px 18px rgba(26,86,219,0.06); }
+
+.form-group textarea {
+    width:100%;
+    padding:10px 12px;
+    border:1px solid var(--clr-border);
+    border-radius:8px;
+    background: #fff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    resize: vertical;
+    transition: box-shadow var(--transition), border-color var(--transition);
+}
+.form-group textarea:focus { outline: none; border-color: var(--clr-primary); box-shadow: 0 6px 18px rgba(26,86,219,0.06); }
+
+.card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card a {
+    color: var(--clr-primary);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.card a:hover {
+    color: var(--clr-primary-dk);
+    text-decoration: underline;
+}
 
 .btn-full {
     display:inline-block;
@@ -585,13 +616,14 @@ img { display: block; max-width: 100%; }
 }
 
 .btn-outline {
-    background: #2563eb;
-    color: #ffffff;
-    border: 2px solid #2563eb;
+    background: transparent;
+    color: var(--clr-primary);
+    border: 2px solid var(--clr-primary);
 }
 
 .btn-outline:hover {
-    background: #1d4ed8;
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--clr-primary-dk);
 }
 
 .btn-full {
@@ -615,4 +647,31 @@ img { display: block; max-width: 100%; }
 
 .btn-full:active {
     transform: translateY(0);
+}
+
+.alert {
+    margin-bottom: 18px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    border: 1px solid transparent;
+}
+
+.alert--success {
+    background: rgba(52, 211, 153, 0.12);
+    color: #166534;
+    border-color: rgba(52, 211, 153, 0.3);
+}
+
+.alert--error {
+    background: rgba(248, 113, 113, 0.12);
+    color: #991b1b;
+    border-color: rgba(248, 113, 113, 0.3);
+}
+
+.auth-form h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 1.1rem;
+    color: var(--clr-text);
 }

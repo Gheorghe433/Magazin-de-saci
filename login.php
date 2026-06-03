@@ -35,10 +35,6 @@ $error = '';
 $email = '';
 $flashSuccess = '';
 
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
 if (isset($_SESSION['flash_success'])) {
     $flashSuccess = $_SESSION['flash_success'];
     unset($_SESSION['flash_success']);
