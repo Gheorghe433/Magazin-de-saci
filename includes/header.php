@@ -4,6 +4,8 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 $loggedIn = isset($_SESSION['user_id']);
+// logout label
+$deconectLabel = 'Deconectare';
 ?>
 <!DOCTYPE html>
 <html lang="ro">
@@ -22,14 +24,17 @@ $loggedIn = isset($_SESSION['user_id']);
             <img src="imagini/Logo.svg" alt="Logo Magazin Saci" class="logo-image">
         </a>
         <div class="header__actions">
-            <?php if (!empty($showContactButton)): ?>
+            <?php
+                $currentPage = basename($_SERVER['PHP_SELF'] ?? '');
+                if (!in_array($currentPage, ['contact.php', 'dashboard.php'])):
+            ?>
                 <a href="contact.php" class="btn btn-outline">Contact</a>
             <?php endif; ?>
             <?php if ($loggedIn): ?>
-                <a href="dashboard.php" class="btn btn-primary">Dashboard</a>
-                <a href="logout.php" class="btn btn-outline">Ieșire</a>
+                <a href="dashboard.php" class="btn btn-primary">Panou</a>
+                <a href="logout.php" class="btn btn-outline" onclick="return confirm('Ești sigur că vrei să te deconectezi?');"><?= htmlspecialchars($deconectLabel) ?></a>
             <?php elseif (!empty($hideAuthButtons)): ?>
-                <a href="logout.php" class="btn btn-outline">Ieșire</a>
+                <a href="logout.php" class="btn btn-outline" onclick="return confirm('Ești sigur că vrei să te deconectezi?');"><?= htmlspecialchars($deconectLabel) ?></a>
             <?php else: ?>
                 <a href="login.php" class="btn btn-outline">Autentificare</a>
                 <a href="register.php" class="btn btn-primary">Înregistrare</a>

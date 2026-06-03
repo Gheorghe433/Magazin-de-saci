@@ -4,6 +4,12 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 $loggedIn = isset($_SESSION['user_id']);
+// flash message from other pages (e.g., login)
+$flashSuccess = '';
+if (isset($_SESSION['flash_success'])) {
+    $flashSuccess = $_SESSION['flash_success'];
+    unset($_SESSION['flash_success']);
+}
 
 $categorii = [
     [
@@ -94,8 +100,8 @@ $categorii = [
 
         <div class="header__actions">
             <?php if ($loggedIn): ?>
-                <a href="dashboard.php" class="btn btn-primary">Dashboard</a>
-                <a href="logout.php" class="btn btn-outline">Ieșire</a>
+                <a href="dashboard.php" class="btn btn-primary">Panou</a>
+                <a href="logout.php" class="btn btn-outline" onclick="return confirm('Ești sigur că vrei să te deconectezi?');">Deconectare</a>
             <?php else: ?>
                 <a href="login.php" class="btn btn-outline">Autentificare</a>
                 <a href="register.php" class="btn btn-primary">Înregistrare</a>
@@ -152,6 +158,20 @@ $categorii = [
 
 <main class="main">
     <div class="container">
+        <?php if (!empty($flashSuccess)): ?>
+            <div class="container" style="margin-top:18px;">
+                <div id="flash-success" class="alert alert--success"><?= htmlspecialchars($flashSuccess) ?></div>
+            </div>
+            <script>
+                setTimeout(function(){
+                    var el = document.getElementById('flash-success');
+                    if (!el) return;
+                    el.style.transition = 'opacity 0.5s ease';
+                    el.style.opacity = '0';
+                    setTimeout(function(){ if(el && el.parentNode) el.parentNode.removeChild(el); }, 500);
+                }, 3000);
+            </script>
+        <?php endif; ?>
         <?php foreach ($categorii as $cat): ?>
         <section class="category-section" id="<?= htmlspecialchars($cat['id']) ?>">
             <h2 class="category-section__title"><?= htmlspecialchars($cat['titlu']) ?></h2>

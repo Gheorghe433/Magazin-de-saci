@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Dashboard';
+$pageTitle = 'Panou';
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -103,7 +103,7 @@ require_once __DIR__ . '/includes/header.php';
 <main class="container">
     <h1>Bine ai venit, <?= htmlspecialchars($_SESSION['user_name'] ?? ($currentUser['nume'] ?? 'Utilizator')) ?></h1>
 
-    <p><a href="logout.php" class="btn btn-outline">Deconectare</a></p>
+        
 
     <?php if ($currentUser): ?>
         <section class="card">
