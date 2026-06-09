@@ -4,7 +4,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 $loggedIn = isset($_SESSION['user_id']);
-// flash message from other pages (e.g., login)
+
 $flashSuccess = '';
 if (isset($_SESSION['flash_success'])) {
     $flashSuccess = $_SESSION['flash_success'];
@@ -99,17 +99,18 @@ $categorii = [
         </a>
 
         <div class="header__actions">
+            <button id="theme-toggle" class="btn btn-outline theme-toggle" type="button" aria-label="Comută tema">🌙</button>
             <?php if ($loggedIn): ?>
-                <a href="dashboard.php" class="btn btn-primary">Panou</a>
-                <a href="logout.php" class="btn btn-outline" onclick="return confirm('Ești sigur că vrei să te deconectezi?');">Deconectare</a>
+                <a href="dashboard.php" class="btn btn-primary" data-i18n="btnPanel">Panou</a>
+                <a href="logout.php" class="btn btn-outline" data-i18n="btnLogout" onclick="return confirm('Ești sigur că vrei să te deconectezi?');">Deconectare</a>
             <?php else: ?>
-                <a href="login.php" class="btn btn-outline">Autentificare</a>
-                <a href="register.php" class="btn btn-primary">Înregistrare</a>
+                <a href="login.php" class="btn btn-outline" data-i18n="btnLogin">Autentificare</a>
+                <a href="register.php" class="btn btn-primary" data-i18n="btnRegister">Înregistrare</a>
             <?php endif; ?>
         </div>
 
         <div class="header__contact">
-            <a href="https://maps.app.goo.gl/GAWu84AruE7GSy628" target="_blank" class="header__address">
+            <a href="https://maps.app.goo.gl/GAWu84AruE7GSy628" target="_blank" class="header__address" data-i18n="locationLabel">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 Chișinău, Moldova
             </a>
@@ -117,6 +118,7 @@ $categorii = [
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.5 1.18a2 2 0 011.98-2h3a2 2 0 012 1.72 13 13 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 6.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45 13 13 0 002.81.7 2 2 0 011.72 2.03z"/></svg>
                 069 149 730
             </a>
+            <button id="lang-toggle" class="btn btn-outline theme-toggle" type="button" aria-label="Schimbă limba">RU</button>
         </div>
     </div>
 </header>
@@ -124,9 +126,9 @@ $categorii = [
 <section class="hero">
     <div class="container hero__inner">
         <div class="hero__text">
-            <h1 class="hero__title">Saci din polipropilenă<br>și polietilenă</h1>
-            <p class="hero__subtitle">Pentru cereale, construcții și uz gospodăresc</p>
-            <a href="#categories-nav" class="hero__btn">
+            <h1 class="hero__title" data-i18n="heroTitle">Saci din polipropilenă<br>și polietilenă</h1>
+            <p class="hero__subtitle" data-i18n="heroSubtitle">Pentru cereale, construcții și uz gospodăresc</p>
+            <a href="#categories-nav" class="hero__btn" data-i18n="heroButton">
                 Vezi produsele
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </a>
@@ -150,7 +152,7 @@ $categorii = [
                     <span>📦</span>
                 <?php endif; ?>
             </div>
-            <span class="categories-nav__label"><?= htmlspecialchars($cat['titlu']) ?></span>
+            <span class="categories-nav__label" data-i18n="cat-<?= htmlspecialchars($cat['id']) ?>"><?= htmlspecialchars($cat['titlu']) ?></span>
         </a>
         <?php endforeach; ?>
     </div>
@@ -174,7 +176,7 @@ $categorii = [
         <?php endif; ?>
         <?php foreach ($categorii as $cat): ?>
         <section class="category-section" id="<?= htmlspecialchars($cat['id']) ?>">
-            <h2 class="category-section__title"><?= htmlspecialchars($cat['titlu']) ?></h2>
+            <h2 class="category-section__title" data-i18n="cat-<?= htmlspecialchars($cat['id']) ?>"><?= htmlspecialchars($cat['titlu']) ?></h2>
             <div class="products-grid">
                 <?php foreach ($cat['produse'] as $produs): ?>
                 <a href="produs.php?slug=<?= urlencode($produs['slug']) ?>" class="product-card">

@@ -4,7 +4,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 $loggedIn = isset($_SESSION['user_id']);
-// logout label
+
 $deconectLabel = 'Deconectare';
 ?>
 <!DOCTYPE html>
@@ -29,6 +29,9 @@ $deconectLabel = 'Deconectare';
                 if (!in_array($currentPage, ['contact.php', 'dashboard.php'])):
             ?>
                 <a href="contact.php" class="btn btn-outline">Contact</a>
+            <?php endif; ?>
+            <?php if ($currentPage === 'index.php'): ?>
+                <button id="theme-toggle" class="btn btn-outline theme-toggle" type="button" aria-label="Comută tema">🌙</button>
             <?php endif; ?>
             <?php if ($loggedIn): ?>
                 <a href="dashboard.php" class="btn btn-primary">Panou</a>
